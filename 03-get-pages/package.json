@@ -1,0 +1,12 @@
+{
+  "name": "get-notion-page-data",
+  "version": "1.0.0",
+  "description": "Retrieves raw page and block data from Notion",
+  "main": "index.js",
+  "author": "Sean C Davis",
+  "license": "MIT",
+  "dependencies": {
+    "@notionhq/client": "^2.2.3",
+    "dotenv": "^16.0.3"
+  }
+}
