@@ -1,0 +1,12 @@
+{
+  "name": "get-notion-database-id",
+  "version": "1.0.0",
+  "description": "Retrieves the database ID from Notion database search results",
+  "main": "index.js",
+  "author": "Sean C Davis",
+  "license": "MIT",
+  "dependencies": {
+    "@notionhq/client": "^2.2.3",
+    "dotenv": "^16.0.3"
+  }
+}
