@@ -16,7 +16,7 @@ Create an integration and connection to your database. Copy the secret token to 
 
 The script takes a single argument, the database name. It will print the database ID to the console.
 
-    node get-database-id.js "My Database"
+    node index.js "My Database"
 
 The output will look something like this:
 

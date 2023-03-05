@@ -1,4 +1,10 @@
 {
+  "name": "transform-notion-page-data",
+  "version": "1.0.0",
+  "description": "Takes a Notion JSON export and transforms into a format that can be used by site frameworks",
+  "main": "index.js",
+  "author": "Sean C Davis",
+  "license": "MIT",
   "dependencies": {
     "highlight.js": "^11.7.0"
   }
