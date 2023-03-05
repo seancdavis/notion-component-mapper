@@ -1,0 +1,12 @@
+# dependencies
+node_modules/
+
+# mac
+.DS_Store
+
+# environment variables
+.env
+!.env.example
+
+# export
+content.json
