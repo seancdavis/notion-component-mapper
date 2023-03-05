@@ -1,5 +1,5 @@
 {
-  "name": "get-notion-page-data",
+  "name": "export-notion-page-data",
   "version": "1.0.0",
   "description": "Retrieves raw page and block data from Notion",
   "main": "index.js",
