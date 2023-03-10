@@ -11,22 +11,10 @@ import prettier from "prettier";
 const ROOT_DIR = process.cwd();
 const BUILD_DIR = path.join(ROOT_DIR, "dist");
 const COMPONENTS_DIR = path.join(ROOT_DIR, "components");
-const CONTENT_FILE = path.join(ROOT_DIR, "content.json");
+const CONTENT_FILE = path.join(ROOT_DIR, "../04-transform-data/content.json");
 const LAYOUT_FILE = path.join(ROOT_DIR, "_layout.ejs");
 
 /* ----- Helpers ----- */
-
-/**
- * Initialize the build directory by removing it and creating a new one.
- */
-function initBuildDir() {
-  // Remove existing dist directory and built files
-  if (fs.existsSync(BUILD_DIR)) {
-    fs.rmSync(BUILD_DIR, { recursive: true, force: true });
-  }
-  // Create new dist directory
-  fs.mkdirSync(BUILD_DIR);
-}
 
 /**
  * Read files in the components directory and return an object with the name of
@@ -55,7 +43,11 @@ function getComponents() {
  * @returns
  */
 function renderComponent(props) {
-  return ejs.render(components[props.type], { ...props });
+  if (!components[props.component]) {
+    console.log(`[ERROR] Component ${props.component} not found`);
+    return "";
+  }
+  return ejs.render(components[props.component], { ...props });
 }
 
 /**
@@ -80,8 +72,18 @@ function buildPage(page) {
 
 /* ----- Runner ----- */
 
-// Setup the build directory
-initBuildDir();
+// Make sure content file exists
+if (!fs.existsSync(CONTENT_FILE)) {
+  console.error("Content file not found. Run build in Part 4 project first.");
+}
+
+// Remove existing dist directory and built files
+if (fs.existsSync(BUILD_DIR)) {
+  fs.rmSync(BUILD_DIR, { recursive: true, force: true });
+}
+
+// Create new dist directory
+fs.mkdirSync(BUILD_DIR);
 
 // Read site files
 const pages = JSON.parse(fs.readFileSync(CONTENT_FILE, "utf-8").toString());
