@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "node ./lib/framework.js dev",
-    "build": "node ./lib/framework.js build"
+    "build": "node ./lib/framework.js",
+    "serve": "live-server --port=3000 ./dist"
   },
   "author": "Sean C Davis",
   "license": "MIT",
