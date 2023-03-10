@@ -1,0 +1,18 @@
+{
+    "name": "static-html",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "node ./lib/framework.js dev",
+        "build": "node ./lib/framework.js build"
+    },
+    "author": "Sean C Davis",
+    "license": "MIT",
+    "devDependencies": {
+        "@stackbit/types": "^0.2.0",
+        "ejs": "^3.1.8",
+        "fast-glob": "^3.2.12",
+        "live-server": "^1.2.2",
+        "prettier": "^2.8.4"
+    }
+}
