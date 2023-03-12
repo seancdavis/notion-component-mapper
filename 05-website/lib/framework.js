@@ -47,6 +47,8 @@ function renderComponent(props) {
     console.log(`[ERROR] Component ${props.component} not found`);
     return "";
   }
+  // Generate random key for component
+  props._id = Math.random().toString(36).substr(2, 9);
   return ejs.render(components[props.component], { ...props });
 }
 

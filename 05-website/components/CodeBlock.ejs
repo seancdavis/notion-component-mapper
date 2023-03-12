@@ -1,0 +1,35 @@
+<div class="component--CodeBlock">
+  <div>
+    <span class="filename">
+      <code><%- filename %></code>
+    </span>
+  </div>
+  <pre class="code"><code><%- code %></code></pre>
+</div>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css"
+/>
+
+<style>
+  .component--CodeBlock {
+    margin: 1.5rem 0;
+  }
+
+  .component--CodeBlock .filename {
+    background-color: #f9fafb;
+    color: #6b7280;
+    display: inline-block;
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .component--CodeBlock .code {
+    background-color: #f9fafb;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 1rem;
+  }
+</style>

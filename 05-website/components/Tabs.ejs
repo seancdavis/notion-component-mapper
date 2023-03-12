@@ -1,0 +1,71 @@
+<div id="Tabs-<%- _id %>" class="component--Tabs">
+  <div class="tab-triggers">
+    <% tabs.forEach((tab, index) => { %>
+    <button class="tab-trigger" data-index="<%- index %>">
+      <%- tab.label %>
+    </button>
+    <% }) %>
+  </div>
+  <% tabs.forEach((tab, index) => { %>
+  <div class="tab-content" data-index="<%- index %>"><%- tab.text %></div>
+  <% }) %>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll("#Tabs-<%- _id %> .tab-trigger");
+  const contents = document.querySelectorAll("#Tabs-<%- _id %> .tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (event) => {
+      const index = event.target.dataset.index;
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      contents.forEach((content) => content.classList.remove("active"));
+      event.target.classList.add("active");
+      document
+        .querySelector(`#Tabs-<%- _id %> .tab-content[data-index="${index}"]`)
+        .classList.add("active");
+    });
+  });
+
+  tabs[0].classList.add("active");
+  contents[0].classList.add("active");
+</script>
+
+<style>
+  .component--Tabs {
+    margin: 1.5rem 0;
+  }
+
+  .component--Tabs .tab-triggers {
+    display: flex;
+  }
+
+  .component--Tabs .tab-triggers > * + * {
+    margin-left: 0.75rem;
+  }
+
+  .component--Tabs .tab-trigger {
+    border-bottom: 0.25rem solid transparent;
+    padding: 0.5rem 0;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .component--Tabs .tab-trigger:hover {
+    border-color: #e5e7eb;
+    cursor: pointer;
+  }
+
+  .component--Tabs .tab-trigger.active {
+    border-color: #14b8a6;
+  }
+
+  .component--Tabs .tab-content {
+    display: none;
+  }
+
+  .component--Tabs .tab-content.active {
+    border: 1px solid #f3f4f6;
+    display: block;
+    padding: 1rem;
+  }
+</style>

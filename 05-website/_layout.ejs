@@ -9,13 +9,45 @@
       :root {
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        font-size: 16px;
         line-height: 1.5;
+      }
+
+      pre,
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+      }
+
+      button {
+        -moz-osx-font-smoothing: inherit;
+        -webkit-appearance: none;
+        -webkit-font-smoothing: inherit;
+        background: transparent;
+        border: none;
+        color: inherit;
+        font: inherit;
+        line-height: normal;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        width: auto;
       }
     </style>
   </head>
   <body>
     <main>
-      <h1><%= page.title %></h1>
+      <a
+        href="/"
+        style="
+          display: inline-block;
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          text-decoration: underline;
+        "
+        >&lt; Back to home</a
+      >
+      <h1 style="margin: 0 0 1.5rem"><%= page.title %></h1>
       <% page.blocks.forEach((block, index) => { %>
       <div><%- component(block) %></div>
       <% }) %>
